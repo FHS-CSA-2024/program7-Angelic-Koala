@@ -34,4 +34,49 @@ N/A
 > ----------------------------
 >
 >Decimal schrute-bucks = $7.89
+>
+>My Code:
+>
+>import java.util.Scanner;
+
+public class Program{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter schrute-bucks: ");
+        int schruteBucks = input.nextInt();
+        System.out.println("Enter klevins: ");
+        int klevins = input.nextInt();
+        System.out.println("Enter stanley-nickels: ");
+        int stanleyNickels = input.nextInt();
+        
+        System.out.println("Decimal schrute-bucks = $" + convertMoney(schruteBucks, klevins, stanleyNickels));
+    }
+    
+    public static double convertMoney(int schruteBucks, int klevins, int stanleyNickels){
+        
+        double total = schruteBucks;
+        double newKlevins = klevins;
+        newKlevins += (double) stanleyNickels / 12;
+        total += newKlevins / 20;
+        total *= 100;
+        total = (int) (total + 0.5);
+        total /= 100;
+        return total;
+    }
+}//import stuff here
+
+//Your code here
+
+//Paste console output below:
+/*
+Enter schrute-bucks: 
+7
+Enter klevins: 
+17
+Enter stanley-nickels: 
+9
+Decimal schrute-bucks = $7.89
+
+*/
 
